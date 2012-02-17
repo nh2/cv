@@ -1,0 +1,31 @@
+header {
+    padding: 50px 50px 0 0;
+    background-color: blue;
+}
+
+#ceva{
+    color: #00008B;
+}
+
+#content{
+    float: left;
+    margin-left: 50px;
+}
+
+#text-box{
+    color: blue;
+    margin-left: 50px;
+}
+
+#input{
+    float: right;
+    margin-right: 100px;
+    margin-top: 100px;
+}
+
+#submit_data{
+    width: 80px;
+    height: 40px;
+    color: white;
+    background-color: blue;
+}
