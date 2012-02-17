@@ -1,6 +1,7 @@
 var http = require("http");
 var mongodb = require('mongodb');
 var express = require('express');
+var request = require('request');
 
 
 var server = new mongodb.Server("127.0.0.1", 27017, {});
@@ -43,6 +44,17 @@ new mongodb.Db('cv', server, {}).open(function (error, client) {
     collection.update({'uid': obj.uid}, obj, {upsert: true});
 
     res.send(req.body);
+  });
+
+  app.post('/login', function(req, res) {
+    var assertion = req.body.assertion;
+    var audience = req.body.audience;
+
+    request.post({url: 'https://browserid.org/verify', json: {assertion: assertion, audience: audience}},
+function(error, response, body) {
+      console.log(body);
+      res.send(body);
+    });
   });
 
   app.listen(7777, "0.0.0.0");
