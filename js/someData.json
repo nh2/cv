@@ -1,0 +1,25 @@
+{
+	"Employment": [
+		{
+			"Employer": "Better Brief",
+			"Role": "Developer",
+			"StartTime": "7th July 2010",
+			"EndTime": "",
+			"Responsibilities": ["Tea", "Code", "Cake", "Awesomeness"]
+		},
+		{
+			"Employer": "Google",
+			"Role": "Plankton",
+			"StartTime": "12th January 1969",
+			"EndTime": "6th July 2010",
+			"Responsibilities": ["Getting eaten by whales"]
+		},
+		{
+			"Employer": "McDonald's",
+			"Role": "Burger Flipper Supreme",
+			"StartTime": "21st October 1960",
+			"EndTime": "28th October 1960",
+			"Responsibilities": ["Cooking", "Cleaning", "Closing"]
+		}
+	]
+}
