@@ -11,7 +11,10 @@ new mongodb.Db('cv', server, {}).open(function (error, client) {
   console.log("database connected");
   var app = express.createServer();
 
-  app.use(express.bodyParser());
+  app.configure(function(){
+    app.use(express.bodyParser());
+    app.use(express.static(__dirname + '/public'));
+  });
 
   app.get('/users/all', function(req, res, next){
     collection.find().toArray(function(err, results) {
@@ -42,5 +45,5 @@ new mongodb.Db('cv', server, {}).open(function (error, client) {
     res.send(req.body);
   });
 
-  app.listen(8888);
+  app.listen(7777, "0.0.0.0");
 });
