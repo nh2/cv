@@ -66,17 +66,38 @@ td { vertical-align: top; }
    Author:
    ========================================================================== */
 
-#Tree {
+#container {
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin-top: -480px;
-	margin-left: -480px;
-	width: 960px;
-	height: 960px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	overflow: hidden;
 }
 
+header {
+	position: relative;
+	text-align: center;
+	z-index: 3;
+}
 
+#Tree {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 50%;
+	margin-left: -480px;
+	width: 960px;
+}
+
+#Info {
+	display: none;
+	background: #fff;
+	border: 1px solid #f00;
+	border-radius: 16px;
+	width: 960px;
+	margin: 0 auto;
+}
 
 
 
