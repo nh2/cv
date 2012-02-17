@@ -8,6 +8,7 @@ var server = new mongodb.Server("127.0.0.1", 27017, {});
 new mongodb.Db('cv', server, {}).open(function (error, client) {
   if (error) throw error;
   var collection = new mongodb.Collection(client, 'cv_collection');
+  console.log("database connected");
   var app = express.createServer();
 
   app.use(express.bodyParser());
