@@ -1,25 +1,31 @@
 {
 	"Employment": [
 		{
+			"Type": "Experience",
 			"Employer": "Better Brief",
 			"Role": "Developer",
 			"StartTime": "7th July 2010",
 			"EndTime": "",
-			"Responsibilities": ["Tea", "Code", "Cake", "Awesomeness"]
+			"Responsibilities": ["Tea", "Code", "Cake", "Awesomeness"],
+			"Media": []
 		},
 		{
+			"Type": "Personal",
 			"Employer": "Google",
 			"Role": "Plankton",
 			"StartTime": "12th January 1969",
 			"EndTime": "6th July 2010",
-			"Responsibilities": ["Getting eaten by whales"]
+			"Responsibilities": ["Getting eaten by whales"],
+			"Media": []
 		},
 		{
+			"Type": "Education",
 			"Employer": "McDonald's",
 			"Role": "Burger Flipper Supreme",
 			"StartTime": "21st October 1960",
 			"EndTime": "28th October 1960",
-			"Responsibilities": ["Cooking", "Cleaning", "Closing"]
+			"Responsibilities": ["Cooking", "Cleaning", "Closing"],
+			"Media": []
 		}
 	]
 }
