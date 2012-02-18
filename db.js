@@ -14,7 +14,8 @@ new mongodb.Db('cv', server, {}).open(function (error, client) {
 
   app.configure(function(){
     app.use(express.bodyParser());
-    app.use(express.static(__dirname + '/public'));
+    app.use("/public", express.static( __dirname + '/public'));
+    console.log(__dirname + '/public');
   });
 
   app.get('/users/all', function(req, res, next){
