@@ -40,15 +40,13 @@
 	</header>
 		<div role="main">
         <div id="content" class="content">
-            <h1>Creatively growing</h1>
-            <img width=600px height=400px src="img/connect.jpg"></img>
         </div>
         
         <div id="input" class="input">
-            <h3>Sign up!</h3>
-            <h4>So you can share your cv with everyone</h4>
+            <h1 id="input-title">It`s time to grow your treevee</h1>
+            <h1 id="input-title2">Basic Info</h1>
             
-            <table id="ceva">
+            <table id="table1" class="table">
             <tr> <td>First name: </td><td> <input class="text-box" type="text" id="fname" /> </td> </tr> 
             <tr> <td>Last name: </td><td> <input class="text-box" type="text" id="lname" /> </td> </tr> 
             <tr> <td>Your email: </td><td> <input class="text-box" type="text" id="email" /><br </td> </tr> 
@@ -71,10 +69,56 @@
                 </select> </td> </tr>
             </table>
             
-            <button id="submit_data" type="button" onclick="submitData()">Sing up</button>
+            <table id="table2" class="table">
+            <tr> <td>Phone: </td><td> <input class="text-box" id="phone" /> </td></tr>
+            <tr> <td>Address: </td><td> <textarea class="text-box" rows="3" cols="19" id="adress" ></textarea> </td></tr>
+            <tr> <td>Nationality: </td><td> <input class="text-box" id="nationality" /> </td></tr>
+            <tr> <td>Website/Blog: </td><td> <textarea class="text-box" rows="3" cols="19" id="website" ></textarea> </td></tr>
+            <tr> <td>Social Network: </td><td> <input class="text-box" id="social" /> </td></tr>
+            </table>
+               
+            <table id="table3" class="table">
+            <tr> <td> </td><td>Work Experience </td></tr>
+            <tr> <td>Company: </td><td> <input class="text-box" id="company" /> </td></tr>    
+            <tr> <td>Start Date: </td><td> <input class="text-box" id="c_start_date" /> </td></tr>    
+            <tr> <td>End Date: </td><td> <input class="text-box" id="c_end_date" /> </td></tr>
+            <tr> <td>Role: </td><td> <input class="text-box" id="c_role" /> </td></tr>
+            <tr> <td>Description/Responsibilities: </td><td> <textarea rows="3" cols="19" class="text-box" id="c_desc" ></textarea> </td><tr>
+            <tr> <td> </td><td>Education </td></tr>
+            <tr> <td>Name of institution: </td><td> <input class="text-box" id="education" /> </td></tr>    
+            <tr> <td>Course: </td><td> <input class="text-box" id="e_course" /> </td></tr>    
+            <tr> <td>Start Date: </td><td> <input class="text-box" id="e_start_date" /> </td></tr>
+            <tr> <td>End Date: </td><td> <input class="text-box" id="e_end_date" /> </td></tr>
+            <tr> <td>Qualifications: </td><td> <input class="text-box" rows="3" cols="19" id="e_desc"></textarea> </td><tr>
+            <tr> <td></td> <td>Skills and expertise</td></tr>
+            <tr> <td>Strong points: </td><td> <textarea class="text-box" rows="6" cols="19" id="skills"></textarea> </td><tr>
+            </table>
         
-        </div>
+            <table id="table4" class="table">
+            <tr> <td>Images: </td> <td><textarea class="text-box" rows="5" cols="19" id="images"></textarea> </td> </tr> 
+            <tr> <td>Videos: </td> <td><textarea class="text-box" rows="5" cols="19" id="videos"></textarea> </td></tr>
+            <tr> <td>Testimonials: </td> <td><textarea class="text-box" rows="5" cols="19" id="testimonials"></textarea> </td></tr>
+            <tr> <td>Articles: </td> <td><textarea class="text-box" rows="5" cols="19" id="articles"></textarea> </td></tr>
+            <tr> <td>Awards: </td> <td><textarea class="text-box" rows="5" cols="19" id="awards"></textarea> </td></tr>
+            <tr> <td>Societies: </td> <td><textarea class="text-box" rows="5" cols="19" id="societies"></textarea> </td></tr>
+            </table>
+          
+            <table id="table5" class="table">
+            <tr> <td>Film making: </td> <td><textarea class="text-box" rows="5" cols="19" id="film"></textarea> </td> </tr> 
+            <tr> <td>Photography: </td> <td><textarea class="text-box" rows="5" cols="19" id="photography"></textarea> </td></tr>
+            <tr> <td>Aspirations/Future works: </td> <td><textarea class="text-box" rows="5" cols="19" id="aspirations"></textarea> </td></tr>
+            <tr> <td>You are done! </td> <td> </td> </tr>
+            </table>
             
+            <button id="submit_data" class="left-button" type="button" onclick="submitData()">Next</button>
+        </div>
+        
+        <div class="button" id="button1" onclick="changeForm('basic info')"> </div>
+        <div class="button" id="button2" onclick="changeForm('personal profile')"> </div>
+        <div class="button" id="button3" onclick="changeForm('skills & jobs')"> </div>
+        <div class="button" id="button4" onclick="changeForm('aspirations')"> </div>
+        <div class="button" id="button5" onclick="changeForm('your done')"> </div>
+        
   </div>		
 	<footer>
 

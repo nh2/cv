@@ -1,7 +1,14 @@
 $(document).ready(function() {
-    
+    changeForm('basic info')
     writeSelectData()
 });
+
+function addEducation() {
+}
+
+function addCompany() {
+    
+}
 
 function writeSelectData() {
 
@@ -39,4 +46,31 @@ function submitData() {
     $.each(data, function(attr, val) {
         console.log(attr + ' > ' + val)
     });
+    
+    console.log(data);
+    
+    $.post('http://nh2.me/cv/users/put/', data, function(ret) {
+        
+        });    
+}
+
+function changeForm(form) {
+    $("#table1").css('display', 'none');
+    $("#table2").css('display', 'none');
+    $("#table3").css('display', 'none');
+    $("#table4").css('display', 'none');
+    $("#table5").css('display', 'none');
+    
+    console.log(form)
+    
+    if(form == 'basic info')
+        $("#table1").css('display', '');
+    else if(form == 'personal profile')
+        $("#table2").css('display', '');
+    else if(form == 'skills & jobs')
+        $("#table3").css('display', '');
+    else if(form == 'aspirations')
+        $("#table4").css('display', '');
+    else
+        $("#table5").css('display', '');
 }
