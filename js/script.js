@@ -202,7 +202,7 @@ if (typeof String.prototype.startsWith != 'function') {
 								$(circle.node).trigger('mouseover');
 							},
 							'mouseout': function(ev) {
-								setTimeout(function() { tooltip.fadeOut(); }, 1000);
+								setTimeout(function() { tooltip.fadeOut(); }, 250);
 								dot.animate({ fill: normalColor }, 200);
 								$(circle.node).trigger('mouseout');
 							}
