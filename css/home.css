@@ -3,8 +3,8 @@ html{
     width: 960px;
     margin-left: auto;
     margin-right: auto;
-    background-image: url('/img/home.png');
-    background-size: 100% 100%;
+    background-image: url('../img/home.png');
+    /*background-size: 100% 100%;*/
     background-repeat:no-repeat;
     background-position: left top;
 }
@@ -23,14 +23,14 @@ html{
     height: 27px;
     width: 230px;
     background-color: #ccc;
-    border-radius: 99px;   
+    border-radius: 99px;
 }
 
 .text-box2{
     height: 17px;
     width: 130px;
     background-color: #ccc;
-    border-radius: 99px;   
+    border-radius: 99px;
 }
 
 .table{

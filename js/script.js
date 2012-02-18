@@ -93,7 +93,6 @@ if (typeof String.prototype.startsWith != 'function') {
 
 		},
 		main: function(data) {
-			console.log(data);
 			var i,
 				radius = 100,
 				n = 25,
@@ -182,7 +181,6 @@ if (typeof String.prototype.startsWith != 'function') {
 								if(state == STATES['Tree']) {
 									showInfo();
 								}
-								console.log(entry);
 								if(entry._youtube) {
 									$('#Info').html('<h1>' + entry.Title + '</h1><p>' + entry.About + '</p>');
 									$('#Info').append('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry._youtube + '" frameborder="0">');
