@@ -1,4 +1,6 @@
 var completed = 'false';
+var forms = ['basic info', 'personal profile', 'skills & jobs', 'aspirations', '', '']
+var form_id = 0;
 
 $(document).ready(function() {
     changeForm('basic info')
@@ -85,23 +87,39 @@ function changeForm(form) {
         $("#input-title2").html('Basic Info');
     }
     if(form == 'basic info') {
+        form_id = 0;
         $("#table1").css('display', '');
         $("#input-title2").html('Basic Info');
     }
     else if(form == 'personal profile') {
+        form_id = 1;
         $("#table2").css('display', '');
         $("#input-title2").html('Personal Profile');
     }
     else if(form == 'skills & jobs') {
+        form_id = 2;
         $("#table3").css('display', '');
         $("#input-title2").html('Skills & Jobs');
     }
     else if(form == 'aspirations') {
+        form_id = 3;
         $("#table4").css('display', '');
         $("#input-title2").html('Aspirations');
     }
     else {
+        form_id = 4;
         $("#table5").css('display', '');
         $("#input-title2").html('You\'re Done');
+    }
+    
+    //$('#button5').css('background-color', 'white');
+}
+
+function submitData() {
+    if(form_id == 4)
+        window.location = '/';
+    else {
+        form_id = form_id + 1;
+        changeForm(forms[form_id]);
     }
 }
