@@ -31,10 +31,16 @@
 	}
 
 	function showTooltip(entry, ev) {
-		var tt, i, html = '<div class="tooltip type-' + entry.Type.toLowerCase() + '"><dl>';
+		var tt, text = '', i, html = '<div class="tooltip type-' + entry.Type.toLowerCase() + '"><dl>';
 		for(i in entry) {
 			if(i == 'Media' || i == 'Dot' || entry[i] == '') continue;
-			html += '<dt>' + i + '</dt><dd>' + entry[i] + '</dd>';
+			if($.isArray(entry[i])) {
+				text = entry[i].join(', ');
+			}
+			else {
+				text = entry[i];
+			}
+			html += '<dt>' + i + '</dt><dd>' + text + '</dd>';
 		}
 		html += '</dl></div>';
 		tt = $(html);
@@ -94,9 +100,9 @@
 			for(i in data.Cloud) {
 				var item = data.Cloud[i],
 					start = item.StartDate,
-					year = start.split('-')[0];
+					year = start ? start.split('-')[0] : null;
 
-				if(item.Type == 'Personal') {
+				if(item.Type == 'Personal' || item.Type == 'Interest') {
 					year = -1;
 				}
 				else if(item.Type == 'Aspiration') {
