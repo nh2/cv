@@ -1,3 +1,9 @@
+if (typeof String.prototype.startsWith != 'function') {
+  String.prototype.startsWith = function (str){
+    return this.indexOf(str) == 0;
+  };
+}
+
 (function() {
 	var tree,
 		treeStructure,
@@ -58,7 +64,7 @@
 
 	return (window.cv = {
 		init: function() {
-			var data = $.getJSON('js/someData.json');
+			var data = $.getJSON('js/someData.json', cv.main);
 
 			tree = Raphael('Tree', 960, '100%');
 
@@ -84,10 +90,10 @@
 				};
 			};
 
-			data.success(cv.main);
 
 		},
 		main: function(data) {
+			console.log(data);
 			var i,
 				radius = 100,
 				n = 25,
@@ -172,10 +178,17 @@
 						var tooltip;
 						$(dot.node).bind({
 							'click': function(ev) {
+								tooltip.hide();
 								if(state == STATES['Tree']) {
 									showInfo();
 								}
-								$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
+								console.log(entry);
+								if(entry._youtube) {
+									$('#Info').html('<h1>' + entry.Title + '</h1><p>' + entry.About + '</p>');
+									$('#Info').append('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry._youtube + '" frameborder="0">');
+								} else {
+									$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
+								}
 							},
 							'mouseover': function(ev) {
 								tooltip = showTooltip(entry, ev);

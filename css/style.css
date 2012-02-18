@@ -297,6 +297,9 @@ header {
 	width: 740px;
 }
 
+#Info iframe {
+}
+
 nav {
 	position: absolute;
 	left: 40px;
