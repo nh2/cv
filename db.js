@@ -1,6 +1,7 @@
 var http = require("http");
 var mongodb = require('mongodb');
 var express = require('express');
+var request = require('request');
 
 
 var server = new mongodb.Server("127.0.0.1", 27017, {});
@@ -8,9 +9,14 @@ var server = new mongodb.Server("127.0.0.1", 27017, {});
 new mongodb.Db('cv', server, {}).open(function (error, client) {
   if (error) throw error;
   var collection = new mongodb.Collection(client, 'cv_collection');
+  console.log("database connected");
   var app = express.createServer();
 
-  app.use(express.bodyParser());
+  app.configure(function(){
+    app.use(express.bodyParser());
+    app.use("/public", express.static( __dirname + '/public'));
+    console.log(__dirname + '/public');
+  });
 
   app.get('/users/all', function(req, res, next){
     collection.find().toArray(function(err, results) {
@@ -41,5 +47,16 @@ new mongodb.Db('cv', server, {}).open(function (error, client) {
     res.send(req.body);
   });
 
-  app.listen(8888);
+  app.post('/login', function(req, res) {
+    var assertion = req.body.assertion;
+    var audience = req.body.audience;
+
+    request.post({url: 'https://browserid.org/verify', json: {assertion: assertion, audience: audience}},
+function(error, response, body) {
+      console.log(body);
+      res.send(body);
+    });
+  });
+
+  app.listen(7777, "0.0.0.0");
 });

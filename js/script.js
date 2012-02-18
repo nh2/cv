@@ -1,3 +1,9 @@
+if (typeof String.prototype.startsWith != 'function') {
+  String.prototype.startsWith = function (str){
+    return this.indexOf(str) == 0;
+  };
+}
+
 (function() {
 	var tree,
 		treeStructure,
@@ -31,10 +37,16 @@
 	}
 
 	function showTooltip(entry, ev) {
-		var tt, i, html = '<div class="tooltip type-' + entry.Type.toLowerCase() + '"><dl>';
+		var tt, text = '', i, html = '<div class="tooltip type-' + entry.Type.toLowerCase() + '"><dl>';
 		for(i in entry) {
 			if(i == 'Media' || i == 'Dot' || entry[i] == '') continue;
-			html += '<dt>' + i + '</dt><dd>' + entry[i] + '</dd>';
+			if($.isArray(entry[i])) {
+				text = entry[i].join(', ');
+			}
+			else {
+				text = entry[i];
+			}
+			html += '<dt>' + i + '</dt><dd>' + text + '</dd>';
 		}
 		html += '</dl></div>';
 		tt = $(html);
@@ -52,7 +64,7 @@
 
 	return (window.cv = {
 		init: function() {
-			var data = $.getJSON('js/someData.json');
+			var data = $.getJSON('js/someData.json', cv.main);
 
 			tree = Raphael('Tree', 960, '100%');
 
@@ -78,10 +90,10 @@
 				};
 			};
 
-			data.success(cv.main);
 
 		},
 		main: function(data) {
+			console.log(data);
 			var i,
 				radius = 100,
 				n = 25,
@@ -94,9 +106,9 @@
 			for(i in data.Cloud) {
 				var item = data.Cloud[i],
 					start = item.StartDate,
-					year = start.split('-')[0];
+					year = start ? start.split('-')[0] : null;
 
-				if(item.Type == 'Personal') {
+				if(item.Type == 'Personal' || item.Type == 'Interest') {
 					year = -1;
 				}
 				else if(item.Type == 'Aspiration') {
@@ -166,10 +178,17 @@
 						var tooltip;
 						$(dot.node).bind({
 							'click': function(ev) {
+								tooltip.hide();
 								if(state == STATES['Tree']) {
 									showInfo();
 								}
-								$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
+								console.log(entry);
+								if(entry._youtube) {
+									$('#Info').html('<h1>' + entry.Title + '</h1><p>' + entry.About + '</p>');
+									$('#Info').append('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry._youtube + '" frameborder="0">');
+								} else {
+									$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
+								}
 							},
 							'mouseover': function(ev) {
 								tooltip = showTooltip(entry, ev);
