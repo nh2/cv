@@ -41,7 +41,7 @@ html {
     /*background-color: green;*/
     border-radius: 999px;
     position: absolute;
-    left: 990px;
+    left: 73%;
     z-index: 2;
     width: 80px;
     height: 70px;
@@ -49,19 +49,19 @@ html {
 }
 
 #button1{
-    top: 140px;
+    top: 22%;
 }
 #button2{
-    top: 228px;
+    top: 34%;
 }
 #button3{
-    top: 304px;
+    top: 46%;
 }
 #button4{
-    top: 380px;
+    top: 58%;
 }
 #button5{
-    top: 460px;
+    top: 70%;
 }
 
 
