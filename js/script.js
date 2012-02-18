@@ -45,7 +45,7 @@ if (typeof String.prototype.startsWith != 'function') {
 	function showTooltip(entry, ev) {
 		var tt, text = '', i, html = '<div class="tooltip type-' + entry.Type.toLowerCase() + '"><dl>';
 		for(i in entry) {
-			if(i == 'Media' || i == 'Dot' || entry[i] == '') continue;
+			if(i == 'Media' || i == 'Dot' || i == '_youtube' || entry[i] == '') continue;
 			if($.isArray(entry[i])) {
 				text = entry[i].join(', ');
 			}
@@ -202,7 +202,7 @@ if (typeof String.prototype.startsWith != 'function') {
 								$(circle.node).trigger('mouseover');
 							},
 							'mouseout': function(ev) {
-								tooltip.hide();
+								setTimeout(function() { tooltip.fadeOut(); }, 1000);
 								dot.animate({ fill: normalColor }, 200);
 								$(circle.node).trigger('mouseout');
 							}

@@ -277,6 +277,8 @@ header {
 	position: relative;
 	text-align: left;
 	z-index: 3;
+	top: 4px;
+	left: 10px;
 }
 
 #Tree {
@@ -382,7 +384,7 @@ nav a.active {
 
 .tooltip {
 	position: absolute;
-	width: 300px;
+	width: 400px;
 	height: 200px;
 	z-index: 100;
 	border-radius: 16px;
