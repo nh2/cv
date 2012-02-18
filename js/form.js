@@ -63,14 +63,24 @@ function changeForm(form) {
     
     console.log(form)
     
-    if(form == 'basic info')
+    if(form == 'basic info') {
         $("#table1").css('display', '');
-    else if(form == 'personal profile')
+        $("#input-title2").html('Basic Info');
+    }
+    else if(form == 'personal profile') {
         $("#table2").css('display', '');
-    else if(form == 'skills & jobs')
+        $("#input-title2").html('Personal Profile');
+    }
+    else if(form == 'skills & jobs') {
         $("#table3").css('display', '');
-    else if(form == 'aspirations')
+        $("#input-title2").html('Skills & Jobs');
+    }
+    else if(form == 'aspirations') {
         $("#table4").css('display', '');
-    else
+        $("#input-title2").html('Aspirations');
+    }
+    else {
         $("#table5").css('display', '');
+        $("#input-title2").html('Your Done');
+    }
 }
