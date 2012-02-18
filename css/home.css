@@ -1,8 +1,5 @@
 html{
-    height: 100%;
-    width: 960px;
-    margin-left: auto;
-    margin-right: auto;
+    height: 613px;
     background-image: url('../img/home.png');
     /*background-size: 100% 100%;*/
     background-repeat:no-repeat;
@@ -39,9 +36,10 @@ html{
 }
 
 .button{
-    /*background-color: green; */
+    /*background-color: gray; */
+    border-radius: 99px;
     position: absolute;
-    left: 867px;
+    left: 730px;
     z-index: 2;
     width: 87px;
     height: 20px;
