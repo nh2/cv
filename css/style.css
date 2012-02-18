@@ -293,14 +293,14 @@ header {
 #Info {
 	display: none;
 	background: #fff;
-
-  border: 1px solid #ccc;
-  /*border-radius: 16px;*/
-  width: 100%;
-  margin: 0 auto;
-  margin-left: 155px;
-  padding: 10px;
-  position: relative;
+	background: rgba(255, 255, 255, 0.7);
+	border: 1px solid #ccc;
+	border-radius: 16px;
+	width: 750px;
+	margin-left: 180px;
+	padding: 10px;
+	position: relative;
+	z-index: 5;
 }
 
 #Info .close {
@@ -313,8 +313,6 @@ header {
 }
 
 #Info iframe {
-  position: absolute;
-  left: 300px;
   float: right;
 }
 
@@ -401,7 +399,7 @@ nav a.active {
 	border-radius: 16px;
 	background: #fff;
 	overflow: auto;
-	font-size: 11px;
+	font-size: 12px;
 	line-height: 20px;
 }
 
