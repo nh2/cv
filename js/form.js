@@ -1,3 +1,5 @@
+var completed = 'false';
+
 $(document).ready(function() {
     changeForm('basic info')
     writeSelectData()
@@ -11,7 +13,18 @@ function addCompany() {
 }
 
 function writeSelectData() {
-
+    
+    console.log(completed)
+    
+    //if(completed == 'true') {
+        //To FIX:
+        $('#fname').val( $('#name').val() );
+        $('#lname').val( $('#name').val() );
+        $('#email').val( $('#email').val() );
+        $('#email2').val( $('#email').val() );
+        $('#pass').val( $('#pass').val() );
+    //}
+    
     for(var year = 1900;year <= 2011;++year) {
         
         var option = $('<option>' + year + '</option>');
@@ -63,6 +76,14 @@ function changeForm(form) {
     
     console.log(form)
     
+    if(form == 'next_page') {
+        completed = 'true';
+        console.log(completed);
+        
+        window.location = '/form.html';
+        $("#table1").css('display', '');
+        $("#input-title2").html('Basic Info');    
+    }
     if(form == 'basic info') {
         $("#table1").css('display', '');
         $("#input-title2").html('Basic Info');

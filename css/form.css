@@ -24,7 +24,17 @@ html{
 }
 
 .text-box {
+    height: 27px;
+    width: 230px;
     background-color: #ccc;
+    border-radius: 99px;   
+}
+
+.text-box2{
+    height: 27px;
+    width: 60px;
+    background-color: #ccc;
+    border-radius: 99px;   
 }
 
 .button{
