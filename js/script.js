@@ -134,18 +134,18 @@
 						'arc': [480, height / 2, 10, 10, n]
 					});
 					if(sortArr[i] == -1) {
-						circle.attr({
-							'fill': '#ccc'
-						});
+						//circle.attr({
+						//	'fill': '#ccc'
+						//});
 					}
-					else if(sortArr[i] == Infinity) {
+					if(sortArr[i] == Infinity) {
 						circle.attr({
 							'opacity': 0
 						});
 					}
 
 					var imgDim = 130;
-					tree.image('img/umadbro.png', 480 - imgDim / 2, height / 2 - imgDim / 2, imgDim, imgDim);
+					tree.image('img/umadbro.png', 480 - imgDim / 2, height / 2 - imgDim / 2, imgDim, imgDim).toBack();
 
 					var angle = Math.PI * 2 / year.length,
 						k = 0, j;
@@ -241,6 +241,12 @@
 						return;
 					}
 				}
+
+				$('#NotificationArea').show().text('Now filtering by ' + link.attr('data-filter'));
+
+				setTimeout(function() {
+					$('#NotificationArea').fadeOut();
+				}, 5000);
 
 				activeFilter = link.addClass('active');
 

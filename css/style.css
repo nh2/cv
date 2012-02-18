@@ -353,11 +353,11 @@ nav a.active {
 	background: #fbd1cc;
 }
 
-.type-interests {
+.type-interest {
 	background: #c4e4e9;
 }
 
-.type-aspirations {
+.type-aspiration {
 	background: #e5d6e5;
 }
 
@@ -393,6 +393,13 @@ nav a.active {
 
 .tooltip dd {
 	margin-left: 100px;
+}
+
+#NotificationArea {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 300px;
 }
 
 
