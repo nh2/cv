@@ -26,8 +26,14 @@ if (typeof String.prototype.startsWith != 'function') {
 	// Animation functions
 	function showInfo() {
 		state = STATES['Info'];
-		$('#Tree').animate({ top: '50%' }, 750);
+		$('#Tree').animate({ top: '40%' }, 750);
 		$('#Info').fadeIn();
+	}
+
+	function hideInfo() {
+		state = 0;
+		$('#Tree').animate({ top: '0%' }, 750);
+		$('#Info').fadeOut();
 	}
 
 	function showTree() {
@@ -67,6 +73,8 @@ if (typeof String.prototype.startsWith != 'function') {
 			var data = $.getJSON('js/someData.json', cv.main);
 
 			tree = Raphael('Tree', 960, '100%');
+
+			$('#Info .close').live('click', hideInfo);
 
 			tree.customAttributes.arc = function (xloc, yloc, value, total, R) {
 				var alpha = 360 / total * value,
@@ -184,10 +192,10 @@ if (typeof String.prototype.startsWith != 'function') {
 								}
 								console.log(entry);
 								if(entry._youtube) {
-									$('#Info').html('<h1>' + entry.Title + '</h1><p>' + entry.About + '</p>');
-									$('#Info').append('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry._youtube + '" frameborder="0">');
+									$('#Info .content').html('<h1>' + entry.Title + '</h1><p>' + entry.About + '</p>');
+									$('#Info .content').prepend('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry._youtube + '" frameborder="0">');
 								} else {
-									$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
+									$('#Info .content').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
 								}
 							},
 							'mouseover': function(ev) {
