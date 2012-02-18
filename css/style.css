@@ -296,6 +296,7 @@ header {
 	width: 960px;
 	margin: 0 auto;
   margin-left: 155px;
+  padding: 10px;
 }
 
 #Info iframe {

@@ -12,16 +12,16 @@
 		},
 		{
 			"Type": "Personal",
-			"Employer": "Google",
-			"Role": "Plankton",
-			"StartDate": "2009-10-11",
-			"EndDate": "2010-07-06",
-			"Responsibilities": ["Getting eaten by whales"],
-			"Description": "Some nice description text",
+			"Employer": "",
+			"Role": "",
+			"StartDate": "",
+			"EndDate": "",
+			"Responsibilities": [],
+			"Description": "",
 			"Media": [],
-			"youtube": "http://www.youtube.com/embed/DdVi366TQog",
-			"youtubeTitle": "What inspires me",
-			"youtubeText": "Have a look at this video which really moves me."
+			"_youtube": "http://www.youtube.com/embed/DdVi366TQog",
+			"Title": "What inspires me",
+			"About": "Have a look at this video. It has influenced my life a lot!"
 		},
 		{
 			"Type": "Education",

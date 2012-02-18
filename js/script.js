@@ -1,3 +1,9 @@
+if (typeof String.prototype.startsWith != 'function') {
+  String.prototype.startsWith = function (str){
+    return this.indexOf(str) == 0;
+  };
+}
+
 (function() {
 	var tree,
 		treeStructure,
@@ -33,7 +39,7 @@
 	function showTooltip(entry, ev) {
 		var tt, i, html = '<div class="tooltip type-' + entry.Type.toLowerCase() + '"><dl>';
 		for(i in entry) {
-			if(i == 'Media' || i == 'Dot' || entry[i] == '') continue;
+			if(i == 'Media' || i == 'Dot' || entry[i] == '' || i.startsWith('_')) continue;
 			html += '<dt>' + i + '</dt><dd>' + entry[i] + '</dd>';
 		}
 		html += '</dl></div>';
@@ -166,13 +172,14 @@
 						var tooltip;
 						$(dot.node).bind({
 							'click': function(ev) {
+								tooltip.hide();
 								if(state == STATES['Tree']) {
 									showInfo();
 								}
 								console.log(entry);
-								if(entry.youtube) {
-									$('#Info').html('<h1>' + entry.youtubeTitle + '</h1><p>' + entry.youtubeText + '</p>');
-									$('#Info').append('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry.youtube + '" frameborder="0">');
+								if(entry._youtube) {
+									$('#Info').html('<h1>' + entry.Title + '</h1><p>' + entry.About + '</p>');
+									$('#Info').append('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry._youtube + '" frameborder="0">');
 								} else {
 									$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
 								}
