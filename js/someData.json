@@ -1,31 +1,51 @@
 {
-	"Employment": [
+	"Cloud": [
 		{
 			"Type": "Experience",
 			"Employer": "Better Brief",
 			"Role": "Developer",
-			"StartTime": "7th July 2010",
-			"EndTime": "",
+			"StartDate": "2010-09-10",
+			"EndDate": "2011-03-04",
 			"Responsibilities": ["Tea", "Code", "Cake", "Awesomeness"],
+			"Description": "Some nice description text",
 			"Media": []
 		},
 		{
 			"Type": "Personal",
 			"Employer": "Google",
 			"Role": "Plankton",
-			"StartTime": "12th January 1969",
-			"EndTime": "6th July 2010",
+			"StartDate": "2009-10-11",
+			"EndDate": "2010-07-06",
 			"Responsibilities": ["Getting eaten by whales"],
+			"Description": "Some nice description text",
 			"Media": []
 		},
 		{
 			"Type": "Education",
 			"Employer": "McDonald's",
 			"Role": "Burger Flipper Supreme",
-			"StartTime": "21st October 1960",
-			"EndTime": "28th October 1960",
+			"StartDate": "2008-08-09",
+			"EndDate": "2009-07-01",
 			"Responsibilities": ["Cooking", "Cleaning", "Closing"],
+			"Description": "Some nice description text",
 			"Media": []
+		},
+		{
+			"Type": "Personal",
+			"Employer": "",
+			"Role": "",
+			"StartDate": "",
+			"EndDate": "",
+			"Responsibilities": [],
+			"Description": "I'm very well organised.",
+			"Media": []
+		},
+		{
+			"Type": "Aspiration",
+			"Employer": "",
+			"StartDate": "",
+			"EndDate": "",
+			"Description": "I want to be an epic chef."
 		}
 	]
 }
