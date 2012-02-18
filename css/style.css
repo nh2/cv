@@ -291,10 +291,14 @@ header {
 #Info {
 	display: none;
 	background: #fff;
-	border: 1px solid #f00;
-	border-radius: 16px;
+	border: 1px solid #ccc;
+	/*border-radius: 16px;*/
 	width: 960px;
 	margin: 0 auto;
+  margin-left: 155px;
+}
+
+#Info iframe {
 }
 
 nav {

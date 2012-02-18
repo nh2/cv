@@ -52,7 +52,7 @@
 
 	return (window.cv = {
 		init: function() {
-			var data = $.getJSON('js/someData.json');
+			var data = $.getJSON('js/someData.json', cv.main);
 
 			tree = Raphael('Tree', 960, '100%');
 
@@ -78,10 +78,10 @@
 				};
 			};
 
-			data.success(cv.main);
 
 		},
 		main: function(data) {
+			console.log(data);
 			var i,
 				radius = 100,
 				n = 25,
@@ -169,7 +169,13 @@
 								if(state == STATES['Tree']) {
 									showInfo();
 								}
-								$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
+								console.log(entry);
+								if(entry.youtube) {
+									$('#Info').html('<h1>' + entry.youtubeTitle + '</h1><p>' + entry.youtubeText + '</p>');
+									$('#Info').append('<iframe class="youtube-player" type="text/html" width="420" height="315" src="' + entry.youtube + '" frameborder="0">');
+								} else {
+									$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
+								}
 							},
 							'mouseover': function(ev) {
 								tooltip = showTooltip(entry, ev);

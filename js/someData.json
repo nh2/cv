@@ -18,7 +18,10 @@
 			"EndDate": "2010-07-06",
 			"Responsibilities": ["Getting eaten by whales"],
 			"Description": "Some nice description text",
-			"Media": []
+			"Media": [],
+			"youtube": "http://www.youtube.com/embed/DdVi366TQog",
+			"youtubeTitle": "What inspires me",
+			"youtubeText": "Have a look at this video which really moves me."
 		},
 		{
 			"Type": "Education",
