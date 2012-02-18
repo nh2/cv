@@ -30,6 +30,21 @@
 		$('#Info').fadeOut();
 	}
 
+	function showTooltip(entry, ev) {
+		var tt, i, html = '<div class="tooltip type-' + entry.Type.toLowerCase() + '"><dl>';
+		for(i in entry) {
+			if(i == 'Media' || i == 'Dot' || entry[i] == '') continue;
+			html += '<dt>' + i + '</dt><dd>' + entry[i] + '</dd>';
+		}
+		html += '</dl></div>';
+		tt = $(html);
+		tt.css({
+			left: ev.pageX + 20,
+			top: ev.pageY - 100
+		});
+		return tt.hide().appendTo(document.body).fadeIn();
+	}
+
 	function circlePath(x, y, r) {
 		var s = "M" + x + "," + (y-r) + "A"+r+","+r+",0,1,1,"+(x-0.1)+","+(y-r)+" z";
 		return s;
@@ -152,18 +167,21 @@
 						});
 
 						// Bind click, mouseover, mouseout etc.
+						var tooltip;
 						$(dot.node).bind({
-							'click': function() {
+							'click': function(ev) {
 								if(state == STATES['Tree']) {
 									showInfo();
 								}
 								$('#Info').text(entry.Employer + ' ' + entry.Responsibilities.join(' '));
 							},
-							'mouseover': function() {
+							'mouseover': function(ev) {
+								tooltip = showTooltip(entry, ev);
 								dot.animate({ fill: hoverColor }, 200);
 								$(circle.node).trigger('mouseover');
 							},
-							'mouseout': function() {
+							'mouseout': function(ev) {
+								tooltip.hide();
 								dot.animate({ fill: normalColor }, 200);
 								$(circle.node).trigger('mouseout');
 							}
