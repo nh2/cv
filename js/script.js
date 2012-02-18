@@ -133,11 +133,6 @@
 						'stroke': '#e5e5e5',
 						'arc': [480, height / 2, 10, 10, n]
 					});
-					if(sortArr[i] == -1) {
-						//circle.attr({
-						//	'fill': '#ccc'
-						//});
-					}
 					if(sortArr[i] == Infinity) {
 						circle.attr({
 							'opacity': 0
@@ -147,8 +142,9 @@
 					var imgDim = 130;
 					tree.image('img/umadbro.png', 480 - imgDim / 2, height / 2 - imgDim / 2, imgDim, imgDim).toBack();
 
-					var angle = Math.PI * 2 / year.length,
-						k = 0, j;
+					var rand = Math.random();
+					var angle = (Math.PI / 2 + Math.PI * rand) / year.length,
+						k = 1, j;
 					for(j in year) {
 						(function(entry) {
 						var dot,

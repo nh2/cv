@@ -53,6 +53,12 @@
 			"Role": "Arctic Monkeys Interview",
 			"StartDate": "",
 			"Media": ["http://www.youtube.com/embed/DdVi366TQog"]
+		},
+		{
+			"Type": "Expertise",
+			"Role": "Driving",
+			"Description": "Passed with no minor errors in March 2007",
+			"StartDate": "2007-03-04"
 		}
 	]
 }
