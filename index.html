@@ -21,12 +21,24 @@
 </head>
 
 <body>
-
+	<div id="top-menu">
+		<table id="top-menu" > <tr>
+			<th> <div id="button1" class="button-top" onclick="">Me</div> </th>
+			<th> <div id="button2" class="button-top" onclick="">About</div> </th>
+			<th> <div id="button3" class="button-top" onclick="">Getting Started</div> </th>
+			<th> <div id="button4" class="button-top" onclick="">Employers</div> </th>
+			<th> <input id="search" type="text" > </input> </th>
+		</tr> </table>
+	</div>
+	<div id="search-img"> <img src="./img/search.png"></img> </div>
+	
 	<div id="container">
+		
 		<div id="NotificationArea"></div>
 		<header>
 			<h1><img alt="Tree Vee" src="img/logo.png" /></h1>
-			<nav>
+			<nav id="left-menu">
+				<br></br> <br></br> <br></br>
 				<ul id="Filter">
 					<li><a href="#" data-column="Type" data-filter="Personal"><span class="type-personal"></span>Personal</a></li>
 					<li><a href="#" data-column="Type" data-filter="Experience"><span class="type-experience"></span>Experience</a></li>

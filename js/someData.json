@@ -11,6 +11,16 @@
 			"Media": []
 		},
 		{
+			"Type": "Experience",
+			"Employer": "Google",
+			"Role": "Developer",
+			"StartDate": "2010-09-10",
+			"EndDate": "2011-03-04",
+			"Responsibilities": ["Tea", "Code", "Cake", "Awesomeness"],
+			"Description": "Voluptate quis pastrami, chuck veniam cillum ullamco.",
+			"Media": []
+		},
+		{
 			"Type": "Personal",
 			"Employer": "",
 			"Role": "",

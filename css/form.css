@@ -3,10 +3,10 @@ html {
     width: 960px;
     margin-left: auto;
     margin-right: auto;
-    background-image: url('../img/template.png');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: 0 0;
+    background-image: url('../img/form_header.png'), url('../img/form_footer.png');
+    background-size: 100% 80%, 100% 20%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, bottom center;
 }
 
 .table{
@@ -38,9 +38,11 @@ html {
 }
 
 .button{
-    /*background-color: green;*/
-    border-radius: 999px;
     position: absolute;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    border-radius: 999px;
     left: 73%;
     z-index: 2;
     width: 80px;
@@ -49,18 +51,23 @@ html {
 }
 
 #button1{
+    background-image: url('../img/button1.png');
     top: 22%;
 }
 #button2{
+    background-image: url('../img/button2.png');
     top: 34%;
 }
 #button3{
+    background-image: url('../img/button3.png');
     top: 46%;
 }
 #button4{
+    background-image: url('../img/button4.png');
     top: 58%;
 }
 #button5{
+    background-image: url('../img/button5.png');
     top: 70%;
 }
 
